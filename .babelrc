@@ -1,0 +1,50 @@
+{
+  "presets": [
+    "react",
+    "flow",
+    ["env", {
+      "useBuiltIns": true,
+      "targets": {
+        "browsers": [
+          "ie >= 11"
+        ]
+      },
+      "modules": false,
+      "loose": true,
+    }]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  },
+  "ignore": [
+    "node_modules"
+  ],
+  "plugins": [
+    ["transform-runtime", {
+      "helpers": false,
+      "polyfill": false,
+      "regenerator": true,
+      "moduleName": "babel-runtime"
+    }],
+    "lodash",
+    "react-hot-loader/babel",
+    "transform-flow-strip-types",
+    "transform-decorators-legacy",
+    "transform-function-bind",
+    "transform-class-properties",
+    "syntax-dynamic-import",
+    "transform-object-rest-spread", [
+      "module-resolver", {
+        "root": ["./src/js"],
+        "alias": {
+          "@pc": "./src/js/pc/containers",
+          "@sp": "./src/js/sp/containers",
+          "@shelfConfig": "./src/js/common/utils/shelfConfig",
+          "@shelfUtils": "./src/js/common/utils/shelfUtils"
+        }
+      }
+    ]
+  ]
+}
