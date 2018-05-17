@@ -20,5 +20,8 @@
   },
   "scripts": {
     "start": "parcel src/index.html"
+  },
+  "dependencies": {
+    "lit-html": "^0.10.0"
   }
 }
